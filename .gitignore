@@ -1,0 +1,19 @@
+# large binaries / raw data
+*.bam
+*.bai
+*.csi
+*.fa
+*.fasta
+*.fasta.*
+*.fa.*
+*.gz
+*.tbi
+
+# intermediate big-ish
+*.vcf
+*.vcf.gz
+*.vcf.gz.tbi
+
+# editors
+*~
+.DS_Store
