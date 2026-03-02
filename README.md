@@ -86,6 +86,7 @@ Down the all-L9105.bam, T_hg19_1000g.bam and Ust_Ishim.hg19_1000g.all.bam as des
 
 Create index of BAMs
 
+---
 
 ## Run
 
@@ -95,6 +96,8 @@ Create index of BAMs
 ./scripts/04_reconstruct_cds.py
 ./scripts/05_translate_and_align.sh
 ./scripts/06_diff_sites.py
+
+---
 
 ## Key outputs:
 
@@ -108,6 +111,7 @@ Alignment: results/alignments/CYP1A1_three.aln.fa
 
 Difference table: results/variants/diff_sites.tsv
 
+---
 
 ## Citation
 
