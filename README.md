@@ -62,15 +62,12 @@ Tools (tested versions in our environment):
 - clustalo (Clustal Omega)
 - python3
 
-
----
-
 ## Setup
 
 ### 1) Clone repo
 ```bash
 git clone git@github.com:Zhiyi-Chen17/2.24.26_Gary_Neandertal_cyp1a1.git
-cd cyp1a1-archaic
+cd 2.24.26_Gary_Neandertal_cyp1a1
 ```
 ### 2) Create Conda Environment
 ```bash
