@@ -71,11 +71,12 @@ Tools (tested versions in our environment):
 ```bash
 git clone git@github.com:Zhiyi-Chen17/2.24.26_Gary_Neandertal_cyp1a1.git
 cd cyp1a1-archaic
-
+```
 ### 2) Create Conda Environment
-
+```bash
 conda env create -f environment/archaic_cyp1a1.yml
 conda activate archaic_cyp1a1
+```
 
 ### 3) Prepare reference
 Download and index a GRCh37/hg19 reference with contigs 1..22 (no chr prefix), e.g. 1000G human_g1k_v37.fasta, and update config/config.sh if needed.
@@ -89,14 +90,14 @@ Create index of BAMs
 ---
 
 ## Run
-
+```bash
 ./scripts/01_call_variants.sh
 ./scripts/02_filter_vcf.sh
 ./scripts/03_build_cds_bed.py
 ./scripts/04_reconstruct_cds.py
 ./scripts/05_translate_and_align.sh
 ./scripts/06_diff_sites.py
-
+```
 ---
 
 ## Key outputs:
