@@ -1,0 +1,5 @@
+samtools: samtools 1.23
+bcftools: bcftools 1.23
+freebayes: version:  v1.3.10
+clustalo: 1.2.4
+transeq: EMBOSS:6.6.0.0
