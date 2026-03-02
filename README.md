@@ -62,7 +62,6 @@ Tools (tested versions in our environment):
 - clustalo (Clustal Omega)
 - python3
 
-We recommend running inside a dedicated conda environment.
 
 ---
 
@@ -70,5 +69,54 @@ We recommend running inside a dedicated conda environment.
 
 ### 1) Clone repo
 ```bash
-git clone <YOUR_REPO_URL>
+git clone git@github.com:Zhiyi-Chen17/2.24.26_Gary_Neandertal_cyp1a1.git
 cd cyp1a1-archaic
+
+### 2) Create Conda Environment
+
+conda env create -f environment/archaic_cyp1a1.yml
+conda activate archaic_cyp1a1
+
+### 3) Prepare reference
+Download and index a GRCh37/hg19 reference with contigs 1..22 (no chr prefix), e.g. 1000G human_g1k_v37.fasta, and update config/config.sh if needed.
+
+### 4) Prepare BAMs
+
+Down the all-L9105.bam, T_hg19_1000g.bam and Ust_Ishim.hg19_1000g.all.bam as described in **Data sources**, add an `@RG` header line to create `all-L9105.rgfix.bam` for compatibility with freebayes.
+
+Create index of BAMs
+
+
+## Run
+
+./scripts/01_call_variants.sh
+./scripts/02_filter_vcf.sh
+./scripts/03_build_cds_bed.py
+./scripts/04_reconstruct_cds.py
+./scripts/05_translate_and_align.sh
+./scripts/06_diff_sites.py
+
+## Key outputs:
+
+VCFs: results/*CYP1A1.vcf, results/*CYP1A1.flt.vcf.gz
+
+CDS FASTA: results/{neandertal,denisova,ustishim}.CYP1A1.cds.fa
+
+Protein FASTA: results/{neandertal,denisova,ustishim}.CYP1A1.protein.fa
+
+Alignment: results/alignments/CYP1A1_three.aln.fa
+
+Difference table: results/variants/diff_sites.tsv
+
+
+## Citation
+
+This repo’s workflow is designed to mirror the reconstruction approach described in the AHR study:
+
+Neandertal BAM from ENA (ERP002097; L9105)
+
+Denisovan via UCSC alignment resources
+
+Ust’-Ishim BAM from ENA (PRJEB6622)
+
+Variant calling with freebayes; alignment with Clustal Omega
